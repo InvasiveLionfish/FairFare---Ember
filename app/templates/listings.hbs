@@ -1,0 +1,12 @@
+{{#each model as |listing|}}
+  <div>
+    <h2>{{listing.donor.name}}</h2>
+    <ul>
+  <li>Pickup Time: {{listing.pickupTime}}</li>
+  <li>Information: {{listing.description}}</li>
+    </ul>
+  </div>
+  {{/each}}
+
+
+{{outlet}}
