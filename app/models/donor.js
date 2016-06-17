@@ -6,6 +6,6 @@ export default Model.extend({
   name: attr('string'),
   address: attr('string'),
   description: attr('string'),
-  contactInfo: attr('string'),
+  phoneNumber: attr('string'),
   listings: hasMany('listing')
 });
