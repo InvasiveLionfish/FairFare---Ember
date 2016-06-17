@@ -6,9 +6,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('donor');
+  this.route('donors');
   this.route('listings');
   this.route('login');
+  this.route('signup');
+  this.route('recipients');
 });
 
 export default Router;
