@@ -11,6 +11,10 @@ Router.map(function() {
   this.route('login');
   this.route('signup');
   this.route('recipients');
+
+  this.route('users', function() {
+    this.route('user', { path: '/:user_id' });
+  });
 });
 
 export default Router;
