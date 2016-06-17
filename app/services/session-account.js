@@ -8,6 +8,7 @@ export default Ember.Service.extend({
 
   loadCurrentUser() {
     return new RSVP.Promise((resolve, reject) => {
+      debugger
       const token = this.get('session.data.authenticated.token');
       if (!Ember.isEmpty(token)) {
         return this.get('store').findRecord('user', 'current-user').then((user) => {

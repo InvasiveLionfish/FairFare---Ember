@@ -8,7 +8,9 @@ export default Ember.Controller.extend({
       var authenticator = 'authenticator:jwt';
       this.get('session').authenticate(authenticator, credentials).catch((reason)=>{
         this.set('errorMessage', reason.responseJSON.errors || reason);
-      });
+      }).then(()=>{
+        this.transitionToRoute('listings')
+      })
     }
   }
 });

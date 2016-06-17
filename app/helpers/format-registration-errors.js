@@ -5,7 +5,7 @@ export function formatRegistrationErrors(error) {
   if (errMsg.includes("_")) {
     return errMsg.replace("_", " ").toLocaleLowerCase();
   } else {
-    return errMsg.toLocaleLowerCase()
+    return errMsg.toLocaleLowerCase();
   }
 }
 

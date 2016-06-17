@@ -7,7 +7,7 @@ export default Base.extend({
     if (Ember.testing) {
       block('Authorization', 'Bearer hotdog');
     }
-    const { token } = data
+    const { token } = data;
     if (this.get('session.isAuthenticated') && token) {
       block('Authorization', `Bearer ${token}`);
     }
