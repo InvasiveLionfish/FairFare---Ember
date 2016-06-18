@@ -6,10 +6,16 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('donor');
+  this.route('donors');
   this.route('listings');
   this.route('login');
   this.route('about');
+  this.route('signup');
+  this.route('recipients');
+
+  this.route('users', function() {
+    this.route('user', { path: '/:user_id' });
+  });
 });
 
 export default Router;
