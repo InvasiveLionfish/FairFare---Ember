@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('donor');
   this.route('listings');
   this.route('login');
+  this.route('about');
 });
 
 export default Router;
