@@ -8,7 +8,7 @@ export default Ember.Component.extend({
 
   actions: {
     submit(){
-      let user = this.get('user')
+      let user = this.get('user');
       this.attrs.triggerSave(user);
     }
  }

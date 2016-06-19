@@ -14,9 +14,9 @@ export default Ember.Controller.extend({
         });
       }).catch((adapterError) => {
         if (adapterError.errors) {
-          this.set('errorMessage', adapterError.errors)
+          this.set('errorMessage', adapterError.errors);
         }
-      })
+      });
     }
   }
 });
