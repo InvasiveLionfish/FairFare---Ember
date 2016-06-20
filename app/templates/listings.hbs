@@ -4,9 +4,11 @@
     <div class="panel-heading">
       <h2>{{listing.donor.name}}</h2>
       <div class="button-panel pull-right">
+        {{#pickup-confirm}}
       {{#bs-button type="success" href="#"}}
       Confirm Pickup
       {{/bs-button}}
+        {{/pickup-confirm}}
       </div>
     </div>
     <div class="panel-body">
