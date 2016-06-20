@@ -15,14 +15,14 @@
 
 <div class="row">
   <div class="col-md-6">
-    {{#bs-button type="success" href="#"}}
+    {{#link-to 'signup' (query-params type="Donor") class="btn btn-success"}}
     I Have Food
-    {{/bs-button}}
+    {{/link-to}}
   </div>
   <div class="col-md-6">
-    {{#bs-button type="success" href="#"}}
+    {{#link-to 'signup' (query-params type="Recipient") class="btn btn-success"}}
     I Need Food
-    {{/bs-button}}
+    {{/link-to}}
   </div>
 </div>
 
@@ -53,6 +53,3 @@
   </div>
 
 </div>
-
-
-
