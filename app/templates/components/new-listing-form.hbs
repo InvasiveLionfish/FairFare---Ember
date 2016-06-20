@@ -4,7 +4,7 @@
 <form {{action "submit" on="submit"}}>
 
   <label for="pickupTime">Pickup Time</label>
-  {{input type="datetime-local" value=listing.pickupTime}}
+  {{bs-datetimepicker date=mydate updateDate=(action (mut listing.pickupTime))}}
 
   <label for="description">Description</label>
   {{input value=listing.description placeholder="enter description" class="form-control"}}

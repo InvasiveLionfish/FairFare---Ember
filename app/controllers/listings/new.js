@@ -5,6 +5,9 @@ export default Ember.Controller.extend({
 
   actions: {
     save(listing){
+      let formattedTime = listing.get('pickupTime')._d
+      debugger;
+      listing.set('pickupTime', formattedTime)
       listing.save().then(()=>{
         this.transitionToRoute('listings');
       })
