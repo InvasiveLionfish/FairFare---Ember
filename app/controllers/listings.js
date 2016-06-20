@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
     },
     updateListing: function(listing){
       listing.save().then(()=>{
-        this.transitionToRoute('listings');
+        window.location.reload(true);
       })
     }
   }
