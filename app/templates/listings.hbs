@@ -5,7 +5,7 @@
       <h2>{{listing.donor.name}}</h2>
       <div class="button-panel pull-right">
         {{#pickup-confirm}}
-      {{#bs-button type="success" href="#"}}
+      {{#bs-button type="success" href="#" action="toggleModal"}}
       Confirm Pickup
       {{/bs-button}}
         {{/pickup-confirm}}
@@ -21,9 +21,7 @@
   {{/each}} 
 </div> 
 
-{{!-- Modal Test --}}
-<button {{action "toggleModal"}}>Toggle Modal</button>
-
+{{!-- Modal Logic --}}
 {{#if isShowingModal}}
   {{#modal-dialog close="toggleModal"
                   targetAttachment="center"
