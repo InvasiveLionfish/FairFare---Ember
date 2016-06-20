@@ -1,16 +1,39 @@
+<div class="container">
 
-{{link-to 'Add Listing' 'listings.new' class="btn btn-primary"}}
+  {{link-to 'Add Listing' 'listings.new' class="btn btn-primary"}}
 
-{{outlet}}
+  {{outlet}}
 
-<div>
-{{#each model as |listing|}}
   <div>
-    <h2>{{listing.donor.name}}</h2>
-    <ul>
-  <li>Pickup Time: {{listing.pickupTime}}</li>
-  <li>Information: {{listing.description}}</li>
-    </ul>
+    {{#each model as |listing|}}
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h2>{{listing.donor.name}}</h2>
+        <div class="button-panel pull-right">
+          {{#pickup-confirm}}
+          {{#bs-button type="success" href="#" action="toggleModal"}}
+          Confirm Pickup
+          {{/bs-button}}
+          {{/pickup-confirm}}
+        </div>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <li>Pickup Time: {{listing.pickupTime}}</li>
+          <li>Information: {{listing.description}}</li>
+        </ul>
+      </div>
+    </div>
+    {{/each}}
   </div>
-  {{/each}}
+
+  {{!-- Modal Logic --}}
+  {{#if isShowingModal}}
+  {{#modal-dialog close="toggleModal"
+  targetAttachment="center"
+  translucentOverlay=true}}
+  Awesome! Your pickup is confirmed.
+  We'll inform the donor.
+  {{/modal-dialog}}
+  {{/if}}
 </div>

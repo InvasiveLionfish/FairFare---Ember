@@ -1,7 +1,17 @@
 @import "bootstrap";
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
 
 body {
   padding-top: 20px;
   $main-color: gold;
 }
 
+.button-panel {
+  margin-top: -45px;
+}
+
+.ember-modal-dialog {
+  width: 200px;
+  height: 100px;
+}
