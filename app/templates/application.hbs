@@ -1,5 +1,8 @@
 <div class="container">
   <h1>Fair/Fare</h1>
+  {{#if session.isAuthenticated}}
+  <a href="#" {{action 'invalidateSession'}}>Logout</a>
+  {{/if}}
   {{partial 'navbar'}}
   {{outlet}}
 </div>
@@ -13,10 +16,4 @@
 </div>
 </footer>
 
-<h1>FairFare</h1>
-{{#if session.isAuthenticated}}
-<a href="#" {{action 'invalidateSession'}}>Logout</a>
-{{/if}}
-
-{{outlet}}
 
