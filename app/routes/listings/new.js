@@ -11,7 +11,6 @@ export default Ember.Route.extend({
     let listing = this.store.createRecord('listing')
     let donor = this.get('sessionAccount').account
     listing.set('donor', donor)
-    debugger;
     return listing
   }
 });
