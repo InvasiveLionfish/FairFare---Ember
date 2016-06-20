@@ -11,6 +11,8 @@ export default Ember.Controller.extend({
 
         this.get('session').authenticate(authenticator, credentials).catch((reason)=>{
           this.set('errorMessage', reason.error || reason);
+        }).then(()=>{
+          this.transitionToRoute('listings');
         });
       }).catch((adapterError) => {
         if (adapterError.errors) {
