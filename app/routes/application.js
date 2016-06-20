@@ -5,6 +5,21 @@ const { service } = Ember.inject;
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
   session: service('session'),
+  sessionAccount: service('session-account'),
+
+  beforeModel() {
+    return this._loadCurrentUser();
+  },
+
+  sessionAuthenticated() {
+    this._loadCurrentUser().then(()=>{
+      this.transitionTo('/');
+    }).catch(() => this.get('session').invalidate());
+  },
+
+  _loadCurrentUser() {
+    return this.get('sessionAccount').loadCurrentUser();
+  },
 
   actions: {
     invalidateSession: function() {
