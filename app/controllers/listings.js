@@ -6,6 +6,11 @@ export default Ember.Controller.extend({
   actions: {
     toggleModal: function() {
       this.toggleProperty('isShowingModal');
+    },
+    updateListing: function(listing){
+      listing.save().then(()=>{
+        this.transitionToRoute('listings');
+      })
     }
   }
 });

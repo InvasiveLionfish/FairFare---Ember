@@ -13,13 +13,20 @@
       <div class="panel-heading">
         <h2>{{listing.donor.name}}</h2>
         {{#if (eq sessionAccount.account.type "Recipient")}}
-        <div class="button-panel pull-right">
-          {{#pickup-confirm}}
-          {{#bs-button type="success" href="#" action="toggleModal"}}
-          Confirm Pickup
-          {{/bs-button}}
-          {{/pickup-confirm}}
-        </div>
+
+            <div class="button-panel pull-right">
+              {{#pickup-confirm}}
+              {{#if listing.pickup}}
+                <button class="btn btn-success" {{action 'updateListing' listing}} disabled>
+                  Pickup Confirmed
+                </button>
+              {{else}}
+              <button class="btn btn-success" {{action 'updateListing' listing}}>
+                Confirm Pickup
+              </button>
+              {{/if}}
+              {{/pickup-confirm}}
+            </div>
         {{/if}}
 
       </div>
