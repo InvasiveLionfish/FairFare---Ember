@@ -1,7 +1,10 @@
 <div class="container">
 
+  {{#if (eq sessionAccount.account.type "Donor") }}
+  <div>
   {{link-to 'Add Listing' 'listings.new' class="btn btn-primary"}}
-
+</div><br>
+  {{/if}}
   {{outlet}}
 
   <div>
@@ -9,6 +12,7 @@
     <div class="panel panel-primary">
       <div class="panel-heading">
         <h2>{{listing.donor.name}}</h2>
+        {{#if (eq sessionAccount.account.type "Recipient")}}
         <div class="button-panel pull-right">
           {{#pickup-confirm}}
           {{#bs-button type="success" href="#" action="toggleModal"}}
@@ -16,6 +20,8 @@
           {{/bs-button}}
           {{/pickup-confirm}}
         </div>
+        {{/if}}
+
       </div>
       <div class="panel-body">
         <ul>
