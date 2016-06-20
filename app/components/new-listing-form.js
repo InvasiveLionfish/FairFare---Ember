@@ -10,6 +10,5 @@ export default Ember.Component.extend({
       let listing = this.get('listing');
       this.attrs.triggerSave(listing);
     }
-  },
-
+  }
 });
