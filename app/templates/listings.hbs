@@ -21,4 +21,16 @@
   {{/each}} 
 </div> 
 
+{{!-- Modal Test --}}
+<button {{action "toggleModal"}}>Toggle Modal</button>
+
+{{#if isShowingModal}}
+  {{#modal-dialog close="toggleModal"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+    Awesome! Your pickup is confirmed. 
+    We'll inform the donor.
+  {{/modal-dialog}}
+{{/if}}
+
 {{outlet}}
