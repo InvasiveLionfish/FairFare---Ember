@@ -1,6 +1,19 @@
-<h1>FairFare</h1>
-{{#if session.isAuthenticated}}
-<a href="#" {{action 'invalidateSession'}}>Logout</a>
-{{/if}}
+<div class="container">
+  <h1>Fair/Fare</h1>
+  {{#if session.isAuthenticated}}
+  <a href="#" {{action 'invalidateSession'}}>Logout</a>
+  {{/if}}
+  {{partial 'navbar'}}
+  {{outlet}}
+</div>
 
-{{outlet}}
+{{!-- Footer --}}
+<footer class="footer">
+<div class="container">
+  <p class="text-muted">
+   All rights reserved Fair/Fare 2016
+  </p>
+</div>
+</footer>
+
+

@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('donors');
   this.route('listings');
   this.route('login');
+  this.route('about');
   this.route('signup');
   this.route('recipients');
 
