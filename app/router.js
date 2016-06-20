@@ -7,7 +7,9 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('donors');
-  this.route('listings');
+  this.route('listings', function() {
+    this.route('new');
+  });
   this.route('login');
   this.route('signup');
   this.route('recipients');

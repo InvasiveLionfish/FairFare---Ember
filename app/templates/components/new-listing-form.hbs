@@ -1,0 +1,18 @@
+<div class="col-sm-6 col-sm-offset-3" stye="text-align: center">
+<h2>Add Listing</h2>
+
+<form {{action "submit" on="submit"}}>
+
+  <label for="pickupTime">Pickup Time</label>
+  {{input type="datetime-local" value=listing.pickupTime}}
+
+  <label for="description">Description</label>
+  {{input value=listing.description placeholder="enter description" class="form-control"}}
+
+  <button type="submit" class="btn btn-default">Sign Up</button>
+</form>
+
+{{error-display errorMessage=errorMessage}}
+
+</div>
+{{yield}}
