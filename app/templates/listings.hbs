@@ -1,12 +1,22 @@
+<div class="container">
 {{#each model as |listing|}}
-  <div>
-    <h2>{{listing.donor.name}}</h2>
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>{{listing.donor.name}}</h2>
+      <div class="button-panel pull-right">
+      {{#bs-button type="success" href="#"}}
+      Confirm Pickup
+      {{/bs-button}}
+      </div>
+    </div>
+    <div class="panel-body">
     <ul>
   <li>Pickup Time: {{listing.pickupTime}}</li>
   <li>Information: {{listing.description}}</li>
     </ul>
-  </div>
-  {{/each}}
-
+    </div>
+    </div>
+  {{/each}} 
+</div> 
 
 {{outlet}}
