@@ -11,11 +11,11 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     return this._loadCurrentUser();
   },
 
-  sessionAuthenticated() {
-    this._loadCurrentUser().then(()=>{
-      this.transitionTo('/');
-    }).catch(() => this.get('session').invalidate());
-  },
+  // sessionAuthenticated() {
+  //   this._loadCurrentUser().then(()=>{
+  //     this.transitionTo('/');
+  //   }).catch(() => this.get('session').invalidate());
+  // },
 
   _loadCurrentUser() {
     return this.get('sessionAccount').loadCurrentUser();
