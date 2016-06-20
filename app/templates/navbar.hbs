@@ -15,6 +15,13 @@
         <li>{{link-to 'About' 'about'}}</li>
         <li>{{link-to 'Listings' 'listings'}}</li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {{#if session.isAuthenticated}}
+          <li><a href="#" {{action 'invalidateSession'}}>Logout</a></li>
+        {{else}}
+          <li>{{link-to 'Sign In' 'login'}}</li>
+        {{/if}}
+      </ul>
     </div>
   </div>
 </nav>
