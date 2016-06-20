@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
   actions: {
     save(listing){
       listing.save().then(()=>{
-        debugger;
+        this.transitionToRoute('listings');
       })
     }
   }
