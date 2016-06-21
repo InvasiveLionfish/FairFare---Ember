@@ -22,7 +22,15 @@ export default Ember.Controller.extend({
     toggleModal: function() {
       this.toggleProperty('isShowingModal');
     },
-    updateListing: function(listing){
+    updateListing: function(listing, sessionAccount){
+      let pickup = this.store.createRecord('pickup', {listing: listing})
+      listing.set('pickup', pickup)
+      listing.save().then(()=>{
+        window.location.reload(true);
+      })
+    },
+    cancelPickup: function(listing){
+      listing.set('pickup', null)
       listing.save().then(()=>{
         window.location.reload(true);
       })

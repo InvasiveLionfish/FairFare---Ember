@@ -3,5 +3,5 @@ import attr from 'ember-data/attr';
 import { belongsTo } from 'ember-data/relationships';
 
 export default Model.extend({
-  listing: belongsTo('listing')
+  recipientId: attr('number')
 });
