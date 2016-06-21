@@ -1,0 +1,57 @@
+@import url('http://fonts.googleapis.com/css?family=Oswald');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#video-background {
+  position: absolute;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
+}
+
+.abovethefold {
+  position: relative;
+  min-height: 100vh;
+}
+
+.abovethefold h3 {
+  color: white;
+}
+
+.homepage .abovethefold {
+  color: white;
+  .navbar{
+    background-color: transparent;
+  }
+}
+
+.homepage h1 {
+  color: white;
+}
+
+.ctas {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 15vh;
+  position: relative;
+    .btn{
+      margin-top: 60px;
+      padding: 20px;
+    }
+    .alert{
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    }
+}
+
+

@@ -5,5 +5,6 @@ export default Ember.Route.extend({
     openRegistrationModal: function(){
       return this.send('openModal');
     }
-  }
+  },
+  classNames: ["homepage"]
 });
