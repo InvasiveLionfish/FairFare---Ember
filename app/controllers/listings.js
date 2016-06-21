@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   sessionAccount: Ember.inject.service('session-account'),
+  moment: Ember.inject.service(),
   isShowingModal: false,
   query: null,
   displayListings: Ember.computed('model', 'query', function(){
@@ -23,18 +24,18 @@ export default Ember.Controller.extend({
       this.toggleProperty('isShowingModal');
     },
     updateListing: function(listing, sessionAccount){
-      let pickup = this.store.createRecord('pickup', {listing: listing})
-      listing.set('pickup', pickup)
+      let pickup = this.store.createRecord('pickup', {listing: listing});
+      listing.set('pickup', pickup);
       listing.save().then(()=>{
         window.location.reload(true);
         alert("Awesome! Your pickup is confirmed. We'll inform the donor.")
-      })
+      });
     },
     cancelPickup: function(listing){
-      listing.set('pickup', null)
+      listing.set('pickup', null);
       listing.save().then(()=>{
         window.location.reload(true);
-      })
+      });
     }
   }
 });

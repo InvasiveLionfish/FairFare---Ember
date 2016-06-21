@@ -9,6 +9,9 @@ export default Ember.Component.extend({
     submit(){
       let listing = this.get('listing');
       this.attrs.triggerSave(listing);
+    },
+    return(){
+      this.attrs.triggerCancel();
     }
   }
 });

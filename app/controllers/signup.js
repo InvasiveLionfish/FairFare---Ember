@@ -6,8 +6,8 @@ export default Ember.Controller.extend({
   type: null,
   actions: {
     save(user){
-      let userType = this.get('type')
-      user.set('type', userType)
+      let userType = this.get('type');
+      user.set('type', userType);
       user.save().then(()=>{
         var credentials = {identification: user.get('email'), password: user.get('password')},
           authenticator = 'authenticator:jwt';
