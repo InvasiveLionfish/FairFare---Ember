@@ -6,9 +6,18 @@
 </div><br>
   {{/if}}
   {{outlet}}
+  
+<div class="form-group-lg search-area">
+    <div class="input-group">
+      <div class="input-group-addon">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      </div>
+      {{input value=query placeholder="Search for Listings" class="form-control"}}
+    </div>
+</div>
 
   <div>
-    {{#each model as |listing|}}
+    {{#each displayListings as |listing|}}
     <div class="panel panel-primary">
       <div class="panel-heading">
         <h2>{{listing.donor.name}}</h2>
