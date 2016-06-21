@@ -1,4 +1,5 @@
 @import url('http://fonts.googleapis.com/css?family=Oswald');
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
 
 body {
   margin: 0;
@@ -25,6 +26,8 @@ body {
 
 .abovethefold h3 {
   color: white;
+  font-family: 'Poiret One', cursive;
+  font-size: 35px;
 }
 
 .homepage .abovethefold {
@@ -36,6 +39,9 @@ body {
 
 .homepage h1 {
   color: white;
+  font-family: 'Poiret One', cursive;
+  text-align: center;
+  font-size: 65px;
 }
 
 .ctas {
