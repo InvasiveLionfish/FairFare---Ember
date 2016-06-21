@@ -7,7 +7,14 @@
   {{/if}}
   {{outlet}}
   
-  {{input value=query placeholder="Search for Listings"}}
+<div class="form-group-lg search-area">
+    <div class="input-group">
+      <div class="input-group-addon">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      </div>
+      {{input value=query placeholder="Search for Listings" class="form-control"}}
+    </div>
+</div>
 
   <div>
     {{#each displayListings as |listing|}}
