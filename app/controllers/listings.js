@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
       this.toggleProperty('isShowingModal');
     },
     updateListing: function(listing, sessionAccount){
-      let pickup = this.store.createRecord('pickup', {listing: listing, recipientId: sessionAccount.account.id})
+      let pickup = this.store.createRecord('pickup', {listing: listing})
       listing.set('pickup', pickup)
       listing.save().then(()=>{
         window.location.reload(true);
