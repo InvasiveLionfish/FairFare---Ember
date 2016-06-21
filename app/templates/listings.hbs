@@ -13,15 +13,20 @@
       <div class="panel-heading">
         <h2>{{listing.donor.name}}</h2>
         {{#if (eq sessionAccount.account.type "Recipient")}}
-
             <div class="button-panel pull-right">
               {{#pickup-confirm}}
               {{#if listing.pickup}}
+                {{#if (eq listing.pickup.recipientId sessionAccount.account.id)}}
+                <button class="btn btn-danger" {{action 'cancelPickup' listing}}>
+                  Cancel Pickup
+                </button>
+                {{else}}
                 <button class="btn btn-success" {{action 'updateListing' listing}} disabled>
                   Pickup Confirmed
                 </button>
+                {{/if}}
               {{else}}
-              <button class="btn btn-success" {{action 'updateListing' listing}}>
+              <button class="btn btn-success" {{action 'updateListing' listing sessionAccount}}>
                 Confirm Pickup
               </button>
               {{/if}}

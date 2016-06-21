@@ -4,5 +4,5 @@ import { hasMany } from 'ember-data/relationships';
 import User from "./user"
 
 export default User.extend({
-
+  pickups: hasMany('pickup')
 });
