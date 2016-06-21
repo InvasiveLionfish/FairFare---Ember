@@ -22,3 +22,32 @@ body {
   position: relative;
   min-height: 100vh;
 }
+
+.abovethefold h3 {
+  color: white;
+}
+
+.homepage {
+  color: white;
+  .navbar{
+    background-color: transparent;
+  }
+}
+
+.ctas {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 15vh;
+  position: relative;
+    .btn{
+      margin-top: 60px;
+      padding: 20px;
+    }
+    .alert{
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    }
+}
+
+
