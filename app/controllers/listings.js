@@ -29,6 +29,7 @@ export default Ember.Controller.extend({
       listing.set('pickup', pickup);
       listing.save().then(()=>{
         window.location.reload(true);
+        alert("Awesome! Your pickup is confirmed. We'll inform the donor.")
       });
     },
     cancelPickup: function(listing){
