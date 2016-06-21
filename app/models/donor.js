@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
 import { hasMany } from 'ember-data/relationships';
@@ -11,4 +12,8 @@ export default User.extend({
   // phoneNumber: attr('string'),
   // listings: hasMany('listing'),
   // email: attr('string')
+  mapURL: Ember.computed('address', function(){
+    const address = this.get('address');
+    return `https://maps.googleapis.com/maps/api/staticmap?size=200x200&markers=${address}`;
+  })
 });
