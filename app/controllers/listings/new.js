@@ -11,6 +11,9 @@ export default Ember.Controller.extend({
       listing.save().then(()=>{
         this.transitionToRoute('listings');
       })
+    },
+    cancel(){
+      this.transitionToRoute('listings')
     }
   }
 });

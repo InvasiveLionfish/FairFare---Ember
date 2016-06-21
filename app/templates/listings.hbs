@@ -1,67 +1,69 @@
 <div class="container">
 
-  {{#if (eq sessionAccount.account.type "Donor") }}
-  <div>
-  {{link-to 'Add Listing' 'listings.new' class="btn btn-primary"}}
-</div><br>
-  {{/if}}
-  {{outlet}}
+  <div class="row">
+    <div class="col-md-3">
+    {{#if (eq sessionAccount.account.type "Donor") }}
+    <div>
+      {{link-to 'Add Listing' 'listings.new' class="btn btn-success"}}
+    </div><br>
+    {{/if}}
+    {{outlet}}
+  </div>
 
-<div class="form-group-lg search-area">
+  <div class="form-group-md search-area col-md-9">
     <div class="input-group">
       <div class="input-group-addon">
         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
       </div>
       {{input value=query placeholder="Search for Listings" class="form-control"}}
     </div>
+  </div>
 </div>
 
-  <div>
-    {{#each displayListings as |listing|}}
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h2>{{listing.donor.name}}</h2>
-        {{#if (eq sessionAccount.account.type "Recipient")}}
-            <div class="button-panel pull-right">
-              {{#pickup-confirm}}
-              {{#if listing.pickup}}
-                {{#if (eq listing.pickup.recipientId sessionAccount.account.id)}}
-                <button class="btn btn-danger" {{action 'cancelPickup' listing}}>
-                  Cancel Pickup
-                </button>
-                {{else}}
-                <button class="btn btn-success" {{action 'updateListing' listing}} disabled>
-                  Pickup Confirmed
-                </button>
-                {{/if}}
-              {{else}}
-              <button class="btn btn-success" {{action 'updateListing' listing}}>
-                Confirm Pickup
-              </button>
-              {{/if}}
-              {{/pickup-confirm}}
-            </div>
+<div>
+  {{#each displayListings as |listing|}}
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3>{{listing.donor.name}}</h3>
+      {{#if (eq sessionAccount.account.type "Recipient")}}
+      <div class="button-panel pull-right">
+        {{#pickup-confirm}}
+        {{#if listing.pickup}}
+        {{#if (eq listing.pickup.recipientId sessionAccount.account.id)}}
+        <button class="btn btn-danger" {{action 'cancelPickup' listing}}>
+          Cancel Pickup
+        </button>
+        {{else}}
+        <button class="btn btn-success" {{action 'updateListing' listing}} disabled>
+          Pickup Confirmed
+        </button>
         {{/if}}
+        {{else}}
+        <button class="btn btn-success" {{action 'updateListing' listing}}>
+          Confirm Pickup
+        </button>
+        {{/if}}
+        {{/pickup-confirm}}
+      </div>
+      {{/if}}
 
-      </div>
-      <div class="panel-body">
-        <img src="{{listing.donor.mapURL}}" class="pull-right" alt="GMaps">
-        <ul>
-          <li>Pickup Time: {{moment-format listing.pickupTime 'MM/DD/YYYY, hh:mm a'}}</li>
-          <li>Information: {{listing.description}}</li>
-        </ul>
-      </div>
     </div>
-    {{/each}}
+    <div class="panel-body">
+      <img src="{{listing.donor.mapURL}}" class="pull-right" alt="GMaps">
+      <h3>{{listing.donor.address}} - {{moment-format listing.pickupTime 'MM/DD/YYYY, hh:mm a'}}</h3>
+      <p>Information: {{listing.description}}</p>
+    </div>
   </div>
+  {{/each}}
+</div>
 
-  {{!-- Modal Logic --}}
-  {{#if isShowingModal}}
-  {{#modal-dialog close="toggleModal"
-  targetAttachment="center"
-  translucentOverlay=true}}
-  Awesome! Your pickup is confirmed.
-  We'll inform the donor.
-  {{/modal-dialog}}
-  {{/if}}
+{{!-- Modal Logic --}}
+{{#if isShowingModal}}
+{{#modal-dialog close="toggleModal"
+targetAttachment="center"
+translucentOverlay=true}}
+Awesome! Your pickup is confirmed.
+We'll inform the donor.
+{{/modal-dialog}}
+{{/if}}
 </div>

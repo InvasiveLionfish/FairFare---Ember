@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   sessionAccount: Ember.inject.service('session-account'),
+  moment: Ember.inject.service(),
   isShowingModal: false,
   query: null,
   displayListings: Ember.computed('model', 'query', function(){
@@ -34,6 +35,9 @@ export default Ember.Controller.extend({
       listing.save().then(()=>{
         window.location.reload(true);
       })
+    },
+    changeDefaultFormat() {
+      this.set('moment.defaultFormat', 'MM.DD.YYYY')
     }
   }
 });

@@ -8,8 +8,9 @@
 
   <label for="description">Description</label>
   {{input value=listing.description placeholder="enter description" class="form-control"}}
-
+  <br>
   <button type="submit" class="btn btn-default">Submit</button>
+  <button class="btn btn-default" {{action "return" on="click"}}>Cancel</button>
 </form>
 
 {{error-display errorMessage=errorMessage}}
