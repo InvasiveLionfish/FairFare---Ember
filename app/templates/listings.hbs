@@ -6,9 +6,11 @@
 </div><br>
   {{/if}}
   {{outlet}}
+  
+  {{input value=query placeholder="Search for Listings"}}
 
   <div>
-    {{#each model as |listing|}}
+    {{#each displayListings as |listing|}}
     <div class="panel panel-primary">
       <div class="panel-heading">
         <h2>{{listing.donor.name}}</h2>

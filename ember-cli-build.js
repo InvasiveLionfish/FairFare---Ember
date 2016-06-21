@@ -10,6 +10,9 @@ module.exports = function(defaults) {
       'importBootstrapCSS': true
     }
   });
+  
+  app.import('bower_components/string_score/string_score.min.js')
+ 
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
