@@ -8,9 +8,9 @@ export default Ember.Route.extend({
 
 
   model() {
-    let listing = this.store.createRecord('listing')
-    let donor = this.get('sessionAccount').account
-    listing.set('donor', donor)
-    return listing
+    let listing = this.store.createRecord('listing');
+    let donor = this.get('sessionAccount').account;
+    listing.set('donor', donor);
+    return listing;
   }
 });

@@ -2,10 +2,11 @@
 @import "ember-modal-dialog/ember-modal-structure";
 @import "ember-modal-dialog/ember-modal-appearance";
 @import "index";
+@import url(https://fonts.googleapis.com/css?family=Poiret+One); 
 
 body {
   padding-top: 20px;
-  $main-color: gold;
+  font-family: 'Poiret One', cursive;
 }
 
 .button-panel {

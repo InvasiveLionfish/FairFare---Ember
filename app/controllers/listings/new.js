@@ -6,11 +6,11 @@ export default Ember.Controller.extend({
 
   actions: {
     save(listing){
-      let formattedTime = listing.get('pickupTime')._d
-      listing.set('pickupTime', formattedTime)
+      let formattedTime = listing.get('pickupTime')._d;
+      listing.set('pickupTime', formattedTime);
       listing.save().then(()=>{
         this.transitionToRoute('listings');
-      })
+      });
     },
     cancel(){
       this.transitionToRoute('listings')
