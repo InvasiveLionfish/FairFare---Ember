@@ -44,7 +44,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.host = 'http://fairfarenyc.herokuapp.com'
   }
 
   return ENV;
