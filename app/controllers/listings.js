@@ -28,8 +28,8 @@ export default Ember.Controller.extend({
       let pickup = this.store.createRecord('pickup', {listing: listing});
       listing.set('pickup', pickup);
       listing.save().then(()=>{
-        this.store.update('listing')
-        // window.location.reload(true);
+        // this.store.update('listing')
+        window.location.reload(true);
         alert("Awesome! Your pickup is confirmed. We'll inform the donor.")
       });
     },

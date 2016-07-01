@@ -7,6 +7,7 @@ export default Ember.Controller.extend({
     authenticate: function(credentials) {
       var authenticator = 'authenticator:jwt';
       this.get('session').authenticate(authenticator, credentials).catch((reason)=>{
+        debugger;
         this.set('errorMessage', reason.responseJSON.errors || reason);
       }).then(()=>{
         this.transitionToRoute('listings');
